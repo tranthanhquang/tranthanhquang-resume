@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tran Thanh Quang - Mobile Developer Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Resume - Mobile Developer (iOS, Android, Flutter)" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.14);
+      --accent-strong: #0ea5e9;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-subtle: #1f2937;
+      --shadow-soft: 0 22px 45px rgba(15, 23, 42, 0.8);
+      --radius-card: 18px;
+      --radius-pill: 999px;
+      --max-width: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 45%, #020617 100%);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      padding: 32px 16px 48px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .resume {
+      width: 100%;
+      max-width: var(--max-width);
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 24px;
+      position: relative;
+    }
+
+    @media (max-width: 900px) {
+      .resume {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .main-column {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, rgba(15,23,42,0.96), rgba(15,23,42,0.92));
+      border-radius: var(--radius-card);
+      border: 1px solid rgba(148,163,184,0.18);
+      box-shadow: var(--shadow-soft);
+      padding: 20px 24px;
+      backdrop-filter: blur(20px);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .card-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .header-card {
+      padding: 22px 24px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at top left, rgba(56,189,248,0.22), transparent 60%);
+      opacity: 0.9;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .header-main {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 600px) {
+      .header-main {
+        flex-direction: column;
+      }
+    }
+
+    .name-block h1 {
+      margin: 0 0 4px;
+      font-size: 1.9rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .name-block h2 {
+      margin: 0;
+      font-size: 0.98rem;
+      font-weight: 500;
+      color: var(--accent-strong);
+      text-transform: uppercase;
+    }
+
+    .tagline {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 460px;
+    }
+
+    .contact {
+      text-align: right;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    .chips-row {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148,163,184,0.35);
+      background: linear-gradient(145deg, rgba(15,23,42,0.8), rgba(15,23,42,0.6));
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .chip--accent {
+      border-color: rgba(56,189,248,0.7);
+      background: radial-gradient(circle at top left, rgba(56,189,248,0.18), rgba(15,23,42,0.95));
+      color: var(--accent);
+    }
+
+    .section-body {
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .objective-text {
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    .item {
+      margin-bottom: 12px;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .item-title {
+      font-weight: 600;
+      font-size: 0.98rem;
+    }
+
+    .item-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .item-subtitle {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .badge {
+      font-size: 0.78rem;
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      background: #020617;
+      border: 1px solid rgba(31,41,55,0.9);
+      color: var(--text-muted);
+    }
+
+    ul.clean-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 6px 0 0;
+    }
+
+    ul.clean-list li {
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 4px;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+
+    ul.clean-list li::before {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+      left: 0;
+      top: 0.55em;
+    }
+
+    .side-column {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pill {
+      font-size: 0.78rem;
+      padding: 4px 9px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(55,65,81,0.9);
+      background: rgba(15,23,42,0.9);
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .side-column {
+        order: -1;
+      }
+      .contact {
+        text-align: left;
+      }
+    }
+
+    .footer-note {
+      margin-top: 8px;
+      font-size: 0.75rem;
+      color: #4b5563;
+      text-align: right;
+    }
+
+    /* Export PDF button */
+    .print-btn {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #0ea5e9, #22c55e);
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.7);
+      z-index: 999;
+    }
+
+    .print-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .card {
+        box-shadow: none;
+        border-radius: 0;
+      }
+      .print-btn {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="resume">
+    <!-- MAIN COLUMN -->
+    <section class="main-column">
+      <!-- HEADER -->
+      <header class="card header-card">
+        <div class="header-main">
+          <div class="name-block">
+            <h1>Tran Thanh Quang</h1>
+            <h2>Mobile Application Developer & Team Leader</h2>
+            <p class="tagline">
+              Mobile engineer specializing in iOS, Android, and cross-platform applications,
+              with strong experience leading teams and delivering high-impact digital products
+              for telecom and enterprise environments.
+            </p>
+            <div class="chips-row">
+              <span class="chip chip--accent">iOS · Android · Flutter</span>
+              <span class="chip">Zalo Mini App & Zalo OA</span>
+              <span class="chip">Team Leadership</span>
+              <span class="chip">Digital Transformation</span>
+            </div>
+          </div>
+          <div class="contact">
+            <div><strong>Location:</strong> Ho Chi Minh, Viet Nam</div>
+            <div><strong>Email:</strong> <a href="mailto:tranthanhquang0712@gmail.com">tranthanhquang0712@gmail.com</a></div>
+            <div><strong>Phone:</strong> <a href="tel:+84833976669">+84 833 976 669</a></div>
+          </div>
+        </div>
+      </header>
+
+      <!-- OBJECTIVE -->
+      <section class="card">
+        <div class="card-header">
+          <div class="card-title">Objective</div>
+        </div>
+        <div class="section-body">
+          <p class="objective-text">
+            Motivated and results-driven Mobile Developer with strong experience in building
+            high-performance iOS, Android, and cross-platform applications. Seeking an opportunity
+            to contribute technical expertise and leadership skills to create innovative, scalable,
+            and user-focused digital solutions. Committed to continuous learning, adopting emerging
+            technologies, and delivering high-quality products within collaborative and fast-paced environments.
+          </p>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="card">
+        <div class="card-header">
+          <div class="card-title">Experience</div>
+          <div class="card-subtitle">Professional Roles & Responsibilities</div>
+        </div>
+        <div class="section-body">
+          <!-- VNPT HCM -->
+          <article class="item">
+            <div class="item-header">
+              <div>
+                <div class="item-title">Team Leader</div>
+                <div class="item-subtitle">VNPT Ho Chi Minh City</div>
+              </div>
+              <div class="item-meta">10/2025 – Present</div>
+            </div>
+            <ul class="clean-list">
+              <li>Led two major digital transformation projects utilizing Zalo Mini App and Zalo OA platforms, connecting citizens with local authorities and improving internal request-handling processes.</li>
+              <li>Planned weekly sprints, assigned tasks, monitored progress, and organized review meetings to evaluate project outcomes and resolve blockers promptly.</li>
+              <li>Reported project status, risks, and achievements to senior management, ensuring transparency and effective decision-making.</li>
+              <li>Collaborated closely with cross-functional teams (Backend, Frontend, BA, QA) to deliver high-quality features aligned with business and user requirements.</li>
+              <li>Ensured code quality and system reliability through regular reviews, documentation, and adoption of best development practices.</li>
+              <li>Coordinated integrations with Zalo OpenAPI to enhance communication, automate notifications, and streamline user interaction flows.</li>
+            </ul>
+            <div class="badge-row">
+              <span class="badge">Zalo Mini App</span>
+              <span class="badge">Zalo OA · Zalo OpenAPI</span>
+              <span class="badge">.NET Backend</span>
+              <span class="badge">Java Spring</span>
+              <span class="badge">Angular</span>
+              <span class="badge">PostgreSQL</span>
+            </div>
+          </article>
+
+          <!-- VNPT BINH DUONG -->
+          <article class="item">
+            <div class="item-header">
+              <div>
+                <div class="item-title">Team Leader – Mobile Development</div>
+                <div class="item-subtitle">VNPT Binh Duong</div>
+              </div>
+              <div class="item-meta">10/2023 – 09/2025</div>
+            </div>
+            <ul class="clean-list">
+              <li>Developed and maintained iOS and Android applications using modern mobile frameworks.</li>
+              <li>Collaborated with BA, QA, and Backend teams to design, implement, and deliver new features, improving user engagement and product stability.</li>
+              <li>Enhanced application performance through optimization techniques and refactoring legacy code.</li>
+              <li>Conducted code reviews and mentored junior developers to ensure high code quality and adherence to best practices.</li>
+              <li>Participated in Agile processes, including daily stand-ups, sprint planning, and retrospectives, contributing to efficient project delivery.</li>
+              <li>Troubleshot and resolved critical bugs, improving app reliability and overall user satisfaction.</li>
+              <li>Deployed mobile builds via Bitrise and Diawi for QA and stakeholder testing.</li>
+              <li>Conducted requirements analysis and designed PostgreSQL database structures to ensure scalability, performance, and data integrity.</li>
+            </ul>
+            <div class="badge-row">
+              <span class="badge">Flutter · Dart</span>
+              <span class="badge">iOS · Android</span>
+              <span class="badge">Bitrise · Diawi</span>
+              <span class="badge">PostgreSQL</span>
+              <span class="badge">Agile · Scrum</span>
+            </div>
+          </article>
+
+          <!-- TMA SOLUTIONS -->
+          <article class="item">
+            <div class="item-header">
+              <div>
+                <div class="item-title">Mobile Developer</div>
+                <div class="item-subtitle">TMA Solutions</div>
+              </div>
+              <div class="item-meta">08/2018 – 08/2023</div>
+            </div>
+            <ul class="clean-list">
+              <li>Developed and maintained iOS and Android applications with high performance and scalability across multiple domains (music, VPN, streaming, travel, utilities).</li>
+              <li>Collaborated with cross-functional teams to design and implement new features, significantly improving user engagement.</li>
+              <li>Improved application functionality and optimized performance through refactoring and system enhancements.</li>
+              <li>Conducted code reviews and mentored junior developers to ensure consistent code quality and adherence to best practices.</li>
+              <li>Participated in Agile ceremonies, including daily stand-ups, sprint planning, and code reviews, contributing to an efficient development workflow.</li>
+              <li>Assisted in troubleshooting and resolving bugs, enhancing application stability and overall user satisfaction.</li>
+              <li>Deployed mobile applications through Bitrise and Diawi for testing and production releases.</li>
+            </ul>
+            <div class="badge-row">
+              <span class="badge">Objective-C · Swift</span>
+              <span class="badge">Java · Android</span>
+              <span class="badge">CI/CD · Bitrise</span>
+              <span class="badge">App Store · Google Play</span>
+            </div>
+          </article>
+
+          <!-- INTERNSHIP -->
+          <article class="item">
+            <div class="item-header">
+              <div>
+                <div class="item-title">Internship</div>
+                <div class="item-subtitle">VNPT Binh Duong</div>
+              </div>
+              <div class="item-meta">06/2017 – 08/2017</div>
+            </div>
+            <ul class="clean-list">
+              <li>Learned Ionic and Angular frameworks and applied them to real-world mobile projects.</li>
+              <li>Conducted research on emerging mobile technologies and presented findings to the team.</li>
+              <li>Worked closely with senior developers to troubleshoot and debug issues.</li>
+              <li>Built a cross-platform application using the Ionic framework, embedding Google Maps API with MVC architecture and OOP principles.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="card">
+        <div class="card-header">
+          <div class="card-title">Selected Projects</div>
+          <div class="card-subtitle">Mobile & Web Applications</div>
+        </div>
+        <div class="section-body">
+          <!-- ZALO MINI APP -->
+          <article class="item">
+            <div class="item-header">
+              <div class="item-title">Zalo Mini App – Citizen Interaction Platform</div>
+              <div class="item-meta">10/2025 – Present</div>
+            </div>
+            <div class="item-subtitle">Zalo Mini App · .NET · Angular · PostgreSQL</div>
+            <ul class="clean-list">
+              <li>Developed a Zalo Mini App platform enabling citizens to interact with local authorities through a unified digital channel.</li>
+              <li>Supported service requests, notifications, and interactive features to enhance government–citizen engagement.</li>
+              <li>Took responsibility for architecture planning, task delegation, and ensuring smooth team collaboration.</li>
+            </ul>
+          </article>
+
+          <!-- ZALO OA -->
+          <article class="item">
+            <div class="item-header">
+              <div class="item-title">Zalo OA – Internal Request Management System</div>
+              <div class="item-meta">10/2025 – Present</div>
+            </div>
+            <div class="item-subtitle">Java Spring · Angular · PostgreSQL · Zalo OpenAPI</div>
+            <ul class="clean-list">
+              <li>Led development of an internal request-handling system enabling efficient assignment, tracking, and resolution of customer-related tasks.</li>
+              <li>Integrated Zalo OA and Zalo OpenAPI to automate notifications and optimize communication between departments.</li>
+            </ul>
+          </article>
+
+          <!-- PLATFORM APP -->
+          <article class="item">
+            <div class="item-header">
+              <div class="item-title">Platform Application Development – Cross-Platform</div>
+              <div class="item-meta">10/2023 – 09/2025</div>
+            </div>
+            <div class="item-subtitle">Flutter · Dart · PostgreSQL · GitLab · Figma</div>
+            <ul class="clean-list">
+              <li>Developed a cross-platform application serving as a foundational platform for multiple sub-applications with shared core functionalities.</li>
+              <li>Focused on modularity, scalability, and reusability to accelerate future app development.</li>
+              <li>Deployed to internal cloud for testing and to the App Store (iOS) for production use.</li>
+            </ul>
+          </article>
+
+          <!-- DJ MIXING -->
+          <article class="item">
+            <div class="item-header">
+              <div class="item-title">DJ Mixing Application – iOS</div>
+              <div class="item-meta">05/2022 – Present</div>
+            </div>
+            <div class="item-subtitle">Objective-C · Xcode · SQLite · Bitbucket · Figma</div>
+            <ul class="clean-list">
+              <li>Developed a DJ mixing application enabling users to create and mix audio tracks in real time with beat sync and smooth transitions.</li>
+              <li>Launched on App Store and Google Play, achieving 1,000,000+ downloads and positive user feedback.</li>
+            </ul>
+          </article>
+
+          <!-- SECURE VPN -->
+          <article class="item">
+            <div class="item-header">
+              <div class="item-title">SecureVPN – iOS & macOS</div>
+              <div class="item-meta">10/2021 – 05/2022</div>
+            </div>
+            <div class="item-subtitle">Swift · Xcode · SQLite · Bitbucket · Figma</div>
+            <ul class="clean-list">
+              <li>Designed and developed a secure VPN application to enhance online privacy and protect user identity.</li>
+              <li>Implemented IP masking, location spoofing, and encrypted traffic, enabling anonymous browsing and access to geo-restricted content.</li>
+            </ul>
+          </article>
+
+          <!-- STREAMING WEBSITE -->
+          <article class="item">
+            <div class="item-header">
+              <div class="item-title">Online Streaming Website – Web Application</div>
+              <div class="item-meta">2020 – 2021</div>
+            </div>
+            <div class="item-subtitle">Java · Spring Boot · ReactJS · PostgreSQL · Adobe XD</div>
+            <ul class="clean-list">
+              <li>Developed a full-featured online streaming platform providing seamless access to multimedia content.</li>
+              <li>Implemented secure authentication and authorization for premium content and built interactive ReactJS UI components.</li>
+            </ul>
+          </article>
+
+          <!-- TRAVEL APP -->
+          <article class="item">
+            <div class="item-header">
+              <div class="item-title">Travel Mobile Application – iOS</div>
+              <div class="item-meta">06/2020 – 08/2020</div>
+            </div>
+            <div class="item-subtitle">Objective-C · UIKit · SQLite · Figma · App Store</div>
+            <ul class="clean-list">
+              <li>Developed a travel app offering real-time booking for flights, hotels, rental cars, and activities via API integrations.</li>
+              <li>Collaborated with designers to ensure a visually appealing and consistent user experience.</li>
+            </ul>
+          </article>
+
+          <!-- MUSIC APP -->
+          <article class="item">
+            <div class="item-header">
+              <div class="item-title">Music Application – iOS & Android</div>
+              <div class="item-meta">2019 – 12/2020</div>
+            </div>
+            <div class="item-subtitle">Java · Swift · Android Studio · Xcode · SQLite · Bitrise</div>
+            <ul class="clean-list">
+              <li>Built a cross-platform music streaming app with custom audio player (play, pause, skip, shuffle, repeat) and personalized recommendations.</li>
+              <li>Successfully launched on App Store and Google Play, reaching 1,000,000+ downloads with strong user ratings.</li>
+            </ul>
+          </article>
+
+          <!-- WEATHER AUTOMATION -->
+          <article class="item">
+            <div class="item-header">
+              <div class="item-title">Weather Application – Automation Testing</div>
+              <div class="item-meta">2018 – 2019</div>
+            </div>
+            <div class="item-subtitle">Java · Appium · Eclipse · GitLab</div>
+            <ul class="clean-list">
+              <li>Designed and executed automated test suites for a mobile weather application using Appium.</li>
+              <li>Expanded and maintained test coverage as new features were introduced to ensure system reliability.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <!-- SIDEBAR -->
+    <aside class="side-column">
+      <!-- SKILLS -->
+      <section class="card">
+        <div class="card-header">
+          <div class="card-title">Skills</div>
+        </div>
+        <div class="section-body">
+          <div class="two-col">
+            <div class="pill-group">
+              <span class="pill">Teamwork</span>
+              <span class="pill">Time Management</span>
+              <span class="pill">Problem Solving</span>
+              <span class="pill">Flutter / Dart</span>
+              <span class="pill">Objective-C</span>
+              <span class="pill">Swift</span>
+            </div>
+            <div class="pill-group">
+              <span class="pill">Java</span>
+              <span class="pill">PHP</span>
+              <span class="pill">PostgreSQL</span>
+              <span class="pill">SQLite</span>
+              <span class="pill">Appium</span>
+              <span class="pill">Xcode · Android Studio</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOOLS -->
+      <section class="card">
+        <div class="card-header">
+          <div class="card-title">Tools & Workflow</div>
+        </div>
+        <div class="section-body">
+          <div class="pill-group">
+            <span class="pill">Xcode</span>
+            <span class="pill">Android Studio</span>
+            <span class="pill">Visual Studio Code</span>
+            <span class="pill">Trello · Jira · Redmine · Backlog</span>
+            <span class="pill">GitHub · GitLab · Bitbucket</span>
+            <span class="pill">Figma · Adobe XD</span>
+            <span class="pill">Agile / Scrum</span>
+            <span class="pill">Code Review & Mentoring</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="card">
+        <div class="card-header">
+          <div class="card-title">Education</div>
+        </div>
+        <div class="section-body">
+          <div class="item">
+            <div class="item-title">Thu Dau Mot University</div>
+            <div class="item-subtitle">B.Sc. in Software Engineering</div>
+            <div class="item-meta">08/2014 – 06/2018</div>
+            <div style="margin-top:4px;font-size:0.82rem;color:var(--text-muted);">
+              GPA: 7.15 / 10
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACTIVITIES -->
+      <section class="card">
+        <div class="card-header">
+          <div class="card-title">Activities</div>
+        </div>
+        <div class="section-body">
+          <div class="item">
+            <div class="item-title">Contributor – hiepsiit.com</div>
+            <div class="item-meta">05/2018 – 08/2018</div>
+            <p style="font-size:0.82rem;color:var(--text-muted);margin-top:4px;">
+              Contributed articles about Java programming.
+            </p>
+          </div>
+          <div class="item">
+            <div class="item-title">Binh Duong Hackathon 2017 – Candidate</div>
+            <div class="item-meta">2017</div>
+            <p style="font-size:0.82rem;color:var(--text-muted);margin-top:4px;">
+              Participated in a 24-hour hackathon to build an “E-hotline” mobile app for incident reporting
+              and rapid response, collaborating with a diverse team of developers and designers.
+            </p>
+          </div>
+          <div class="item">
+            <div class="item-title">Smart City Summit Binh Duong Hackathon – Candidate</div>
+            <div class="item-meta">2016</div>
+            <p style="font-size:0.82rem;color:var(--text-muted);margin-top:4px;">
+              Built a mobile application providing reliable lodging information and essential admin procedures
+              for workers, leveraging IBM Bluemix and self-learning Android.
+            </p>
+          </div>
+          <div class="item">
+            <div class="item-title">IT-TDMU Club – Member</div>
+            <div class="item-meta">2015 – 2017</div>
+            <p style="font-size:0.82rem;color:var(--text-muted);margin-top:4px;">
+              Participated in meetings, workshops, projects, competitions, and tech talks within the university.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS -->
+      <section class="card">
+        <div class="card-header">
+          <div class="card-title">Certifications</div>
+        </div>
+        <div class="section-body">
+          <ul class="clean-list">
+            <li>JTEC's Information Technology Passport (10/2016)</li>
+            <li>TOEIC 490 (04/2016)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- HONORS & AWARDS -->
+      <section class="card">
+        <div class="card-header">
+          <div class="card-title">Honors & Awards</div>
+        </div>
+        <div class="section-body">
+          <ul class="clean-list">
+            <li>3rd prize – TDM University Line Following Robot Design Contest (2016)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- INTERESTS -->
+      <section class="card">
+        <div class="card-header">
+          <div class="card-title">Interests</div>
+        </div>
+        <div class="section-body">
+          <div class="pill-group">
+            <span class="pill">Singing</span>
+            <span class="pill">Listening to Music</span>
+            <span class="pill">Reading Books</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="footer-note">
+        Last updated: 2025 &mdash; Hosted on GitHub Pages
+      </div>
+    </aside>
+  </main>
+
+  <!-- Export to PDF Button -->
+  <button class="print-btn" onclick="window.print()">
+    Export PDF
+  </button>
+</body>
+</html>
